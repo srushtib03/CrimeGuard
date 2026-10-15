@@ -1,0 +1,103 @@
+/* CrimeGuard case-file UI — restrained investigation-room palette */
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{font-family:'Manrope',sans-serif;color:#e6edf2;background:#0a0f13;font-synthesis:none;--ink:#e6edf2;--muted:#8e9ca7;--line:#29343b;--orange:#f06449;--rose:#ef6a61;--blue:#55d7d0;--case:#0a0f13;--panel:#11191f;--panel2:#151f26;--cyan:#55d7d0;--red:#f06449}
+body{background:#0a0f13;color:#e6edf2}button,input,select{font-family:'Manrope',sans-serif}.app{background:radial-gradient(ellipse at 82% 0%,#16252b 0,#0c1217 35%,#090d11 100%);color:#e6edf2}
+.sidebar{background:#090e12;border-right:1px solid #26343a;color:#c8d4da;box-shadow:10px 0 35px #0003}.brand{border-bottom:1px solid #202c32;margin-bottom:12px}.brandmark{border-radius:7px;background:#13292b;border:1px solid #3eaaa7;color:#65e3dc;box-shadow:0 0 22px #3bd3ca17}.brand h2{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.04em}.brand small{color:#748891}.navlabel{color:#6e828b;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em}.navbtn{color:#91a1aa;border-radius:6px;border:1px solid transparent}.navbtn:hover{background:#152328;color:#e9f5f5;transform:translateX(2px)}.navbtn.active{background:linear-gradient(90deg,#14292b,#111c22);color:#8cf1e8;border-color:#274a4c;box-shadow:inset 2px 0 #55d7d0,0 8px 20px #0002}.status{background:#111b20;border-color:#2b4145;border-radius:7px}.status b{color:#cfe3e6}.status small{color:#83959c}.dot{background:#55d7a2;box-shadow:0 0 0 4px #55d7a21a}
+.main{background:transparent}.topbar{background:#0b1116ed;border-bottom:1px solid #26343a;backdrop-filter:blur(18px)}.crumb{color:#84969f}.topActions{gap:7px}.search,.modeToggle,.signOut,.roleBadge{background:#111a20;border:1px solid #2b3a42;color:#a9bbc2;border-radius:6px}.search:hover,.modeToggle:hover,.signOut:hover{border-color:#4b7779;color:#e2f7f5;background:#142126}.search kbd{background:#263238;color:#9eafb5}.content{max-width:1660px}.hero h1{font-family:'Manrope',sans-serif;font-weight:800;color:#eef5f6;letter-spacing:-.055em}.hero p{color:#93a4ad}.eyebrow{font-family:'IBM Plex Mono',monospace;color:#55d7d0;letter-spacing:.16em;font-size:10px}.eyebrow.light{color:#55d7d0}.hero h1 em{color:#f06449}.heroDashboard:before{content:"CASE INTELLIGENCE / LIVE WORKSPACE";position:absolute;top:18px;right:20px;font:10px 'IBM Plex Mono',monospace;letter-spacing:.15em;color:#597078;border:1px solid #283b41;padding:7px 9px;border-radius:3px}
+.card,.modelCard{background:linear-gradient(145deg,#141e24,#10171c);border:1px solid #2a3940;border-radius:9px;box-shadow:0 12px 32px #0002}.card{padding:19px}.card:hover{border-color:#385258}.sectionTitle{border-bottom:1px solid #25343a;padding-bottom:12px}.sectionTitle h3{font-family:'Manrope',sans-serif;color:#e2ecef;font-size:14px;font-weight:700}.sectionTitle span{color:#81949d;font-family:'IBM Plex Mono',monospace;font-size:9px}.stat{background:linear-gradient(145deg,#152127,#10171c);border-color:#2a3940}.statAccent{border-color:#6d4941}.stat:after{background:#55d7d008}.stat .label{font-family:'IBM Plex Mono',monospace;color:#81969f;letter-spacing:.1em}.stat .value{font-family:'IBM Plex Mono',monospace;color:#f0f6f7}.stat .meta{color:#8fa1a9}.grid2{gap:16px}.table th{color:#8fa2aa;border-color:#2b3a40;font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.06em}.table td{color:#c1cfd4;border-color:#233137}.table tr:hover td{background:#19272c}.pill{background:#243137;color:#b8c9cf;border:1px solid #34464c}
+.pageGrid{gap:16px}.field label{color:#95a7af;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.025em}.field input,.field select,.inputIcon input{background:#0c1318;border:1px solid #304149;color:#e3eef1;border-radius:6px;padding:10px}.field input::placeholder,.inputIcon input::placeholder{color:#5f727b}.field input:focus,.field select:focus,.inputIcon input:focus{border-color:#55d7d0;box-shadow:0 0 0 2px #55d7d018}.field select option{background:#11191f;color:#e6edf2}.primary{background:#d9513f;color:#fff;border:1px solid #ef705c;border-radius:6px;box-shadow:0 5px 18px #d9513f18}.primary:hover{background:#ed624d;box-shadow:0 8px 22px #e45a4628}.secondary{background:#172329;border:1px solid #34474e;color:#d3e0e4;border-radius:6px}.secondary:hover{border-color:#55d7d0;background:#1b2d32}.predictBtn{min-height:43px;font-weight:700;letter-spacing:.01em}.modelChooser{background:#0d151a;border-color:#2d3d43;border-radius:7px}.modelChooser span{color:#83969e;font-family:'IBM Plex Mono',monospace}.modelChooser button{color:#a2b1b7;border-radius:5px}.modelChooser button.selected{background:#1c4142;color:#8ef1e8;box-shadow:inset 0 0 0 1px #387a78}.resultCard{background:radial-gradient(ellipse at 50% 0%,#173034 0,#111a20 36%,#10171c 100%);border-color:#30454b}.result{padding:15px}.prob,.riskRing b{font-family:'IBM Plex Mono',monospace;color:#f0f7f8}.riskRing{width:188px;height:188px}.riskRing svg{width:188px;height:188px}.ringBg{stroke:#26373d}.ringValue{stroke:#55d7d0;filter:drop-shadow(0 0 4px #55d7d044)}.resultBadge{background:#1b3837;color:#72e8dc;border:1px solid #316966;font-family:'IBM Plex Mono',monospace}.meaning{background:#1a2528;border:1px solid #65463c;border-radius:6px}.meaning b{color:#e9f2f3}.meaning span{color:#a4b4ba}.tip{background:#111b20;border-color:#293b42;color:#93a5ad;border-radius:6px}.tip svg{color:#55d7d0}.barBg{background:#26343a}.barFill{background:linear-gradient(90deg,#55d7d0,#e9c16b,#f06449)}.explainRow{color:#bdcbd0}.pos{background:#f06449}.neg{background:#55d7d0}.errorBox{background:#321d1b;border-color:#743a33;color:#ff9c8d}.empty{color:#80939b}.emptyResult h2{color:#e6eef1}.emptyResult p{color:#90a2aa}.shieldPulse{background:#183233;color:#62e4da}.modelMini span,.modelMini b{background:#1a292e;color:#b8c9ce;border:1px solid #2c4148}.map{border:1px solid #304149;filter:saturate(.82) contrast(1.03)}.mapLegend{color:#91a3aa}.legendDot{background:#f06449;box-shadow:0 0 0 5px #f064491a}.tabs{background:#111a20;border:1px solid #2a3a41}.tab{color:#9aabb2}.tab.active{background:#234143;color:#8cf1e8;box-shadow:inset 0 0 0 1px #3b7776}.actionCard{background:#121d22;border-color:#2b3c42;color:#d9e5e8;border-radius:6px}.actionCard:hover{border-color:#55d7d0;background:#17282c}.actionCard small{color:#8ba0a8}.actionNum,.linkBtn{color:#f07861}.insightStrip{background:#152529;border-color:#335052;border-radius:7px}.insightStrip svg{color:#55d7d0}.insightStrip b{color:#dce9eb}.insightStrip p{color:#91a5ad}.modelCard.winner{border-color:#3e7472;box-shadow:0 18px 45px #0002}.modelCard.winner:before{background:#55d7d00a}.modelTag{color:#55d7d0;font-family:'IBM Plex Mono',monospace}.modelCard h2{color:#eef5f6}.modelCard p{color:#96a8b0}.bigMetric{font-family:'IBM Plex Mono',monospace;color:#f2f7f8}.bigMetric small{color:#8fa2aa}.metricList{border-color:#2a3b41}.metricList div{border-color:#27373d}.metricList span{color:#92a4ac}.meaningGrid>div{background:#172328;border:1px solid #2b3e44}.meaningGrid b{color:#dce8eb}.meaningGrid p{color:#91a3aa}.commandOverlay{background:#02070bd9;backdrop-filter:blur(8px)}.commandBox{background:#10191f;border-color:#2b3e44;box-shadow:0 30px 90px #0009}.commandSearch{border-color:#293a40;color:#78a6a8}.commandSearch input{background:transparent;color:#e6edf2}.commandSearch kbd{background:#27363c;color:#b8c7cc}.commandBox>button{background:transparent;color:#c7d5da}.commandBox>button:hover{background:#1a2a30}.modeToggle svg{color:#55d7d0}
+/* login: restrained case-file wall, not a sci-fi template */
+.loginPage{background:#0a0f13;color:#e6edf2}.loginHero{background:radial-gradient(ellipse at 25% 50%,#172c30 0,#10191e 42%,#090e12 100%);border-right:1px solid #2a3a40;position:relative;overflow:hidden}.loginHero:after{content:"EVIDENCE • ANALYSIS • REPORTING";position:absolute;left:42px;bottom:48px;color:#61777e;font:10px 'IBM Plex Mono',monospace;letter-spacing:.18em}.loginPitch h1{font-family:'Manrope',sans-serif;color:#f0f5f6;letter-spacing:-.055em}.loginPitch p{color:#9aabb2}.loginFoot{color:#71858d}.loginPanel{background:#0b1116}.loginCard{background:#111a20;border:1px solid #2b3b42;box-shadow:0 24px 70px #0004;border-radius:10px}.loginCard h2{color:#edf4f5;font-family:'Manrope',sans-serif}.loginSub{color:#92a4ac}.roleCard{background:#0d151a;border-color:#2a3b42;color:#d4e1e5;border-radius:7px}.roleCard small,.roleCard em{color:#879da5}.roleCard.selected{background:#183032;border-color:#4ca8a3;box-shadow:inset 0 0 0 1px #2d706e}.roleCard.selected svg{color:#55d7d0}.inputIcon{background:#0c1318;border:1px solid #304149;border-radius:6px}.inputIcon svg{color:#77929a}.inputIcon input{border:0!important;box-shadow:none!important}.eyeBtn{color:#91a5ad}.demoLink{color:#67dcd4}.radar{opacity:.55}.radar span{border-color:#3c9b98}.radar i{background:#55d7d0;box-shadow:0 0 24px #55d7d0}.globeScene{filter:saturate(.65)}.globe{background:radial-gradient(circle at 35% 28%,#e6c8a4 0,#7e9e8e 11%,#1a4648 18%,#13262d 65%,#090f14 100%);box-shadow:inset -25px -20px 50px #0009,0 25px 65px #0005}.globeGlow{background:#55d7d012}.orbit{border-color:#55d7d028}.globeLabel{color:#d6f4f1}.globeLabel small{color:#92b8b8}.hotspotDot{background:#f06449;box-shadow:0 0 0 7px #f0644918,0 0 18px #f06449}.spatial3dStage{background:radial-gradient(circle at 50% 45%,#172b30 0,#10191f 55%,#0d1419 100%);border-color:#2a3d43}.spatial3dFloor{border-color:#55d7d025;background:radial-gradient(ellipse,#55d7d00b,transparent 68%);box-shadow:0 35px 70px #0005}.spatialDot span{background:#55d7d0;box-shadow:0 0 0 7px #55d7d018,0 0 25px #55d7d066}.spatialDot.dbscan span{background:#f06449;box-shadow:0 0 0 7px #f0644918,0 0 25px #f0644966}.spatialDot b{color:#9bb0b6}.spatialAxis{background:#587077}.spatial3dBadge{background:#101c21d9;border-color:#2c4248;color:#a6bac0}
+.demoPresetRow{background:#111b20;border-color:#2b3c42;border-radius:6px}.demoPresetRow span{color:#91a4ac;font-family:'IBM Plex Mono',monospace}.demoPreset{background:#172328;border-color:#30444a;color:#b7c9ce;border-radius:5px}.demoPreset:hover{border-color:#55d7d0;background:#193638;color:#8cf1e8}
+/* Keep the dashboard legible on laptop and mobile widths */
+@media(max-width:1100px){.sidebar{background:#090e12}.topbar{padding:0 22px}.content{padding:24px 22px 48px}}
+@media(max-width:700px){.topbar{padding:0 12px}.content{padding:18px 12px 38px}.hero h1{font-size:29px}.card{padding:14px}.pageGrid{grid-template-columns:minmax(0,1fr)}.loginHero:after{left:22px;bottom:22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* === CrimeGuard photographic case-room refresh ===
+   Local image assets keep the UI self-contained; dark overlays preserve contrast. */
+:root {
+  --cg-text: #f3f6f8;
+  --cg-muted: #b0bec5;
+  --cg-line: #34434a;
+  font-family: 'Inter', 'Manrope', sans-serif;
+}
+html, body, button, input, select, textarea { font-family: 'Inter', 'Manrope', sans-serif; }
+.hero h1, .loginPitch h1, .brand h2, .loginCard h2, .sectionTitle h3 {
+  font-family: 'Cal Sans', 'Inter', 'Manrope', sans-serif;
+  letter-spacing: -0.035em;
+}
+/* Use real reference imagery as atmosphere, not as busy content behind text. */
+.loginHero {
+  background-color: #080c0f;
+  background-image:
+    linear-gradient(90deg, rgba(5,8,10,.93) 0%, rgba(7,10,13,.82) 48%, rgba(7,10,13,.50) 100%),
+    url('/crimeguard-assets/mentalist-caseboard.png');
+  background-size: cover, min(88%, 900px) auto;
+  background-position: center, center 53%;
+  background-repeat: no-repeat;
+}
+.loginHero:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(135deg, transparent 0 63%, rgba(240,100,73,.07) 63.1%, transparent 63.4%),
+                    repeating-linear-gradient(0deg, transparent 0 39px, rgba(105,218,210,.035) 40px);
+  z-index: 0;
+}
+.loginHero > * { position: relative; z-index: 1; }
+.loginHero:after { z-index: 1; text-shadow: 0 2px 12px #000; }
+.heroDashboard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #0a1014;
+  background-image:
+    linear-gradient(90deg, rgba(8,13,17,.97) 0%, rgba(8,13,17,.89) 43%, rgba(8,13,17,.60) 100%),
+    url('/crimeguard-assets/crime-scene-lab.png');
+  background-size: cover, cover;
+  background-position: center, center 47%;
+  border: 1px solid #35474d;
+  box-shadow: 0 18px 48px rgba(0,0,0,.22);
+}
+.heroDashboard:after {
+  content: 'CASE REVIEW  /  CHICAGO  /  2025';
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  z-index: 0;
+  color: rgba(203,222,225,.58);
+  font: 9px 'IBM Plex Mono', monospace;
+  letter-spacing: .16em;
+  pointer-events: none;
+}
+.heroDashboard > * { position: relative; z-index: 1; }
+/* The photographic texture stays subtle behind every data page. */
+.main { position: relative; isolation: isolate; }
+.main:before {
+  content: '';
+  position: fixed;
+  inset: 72px 0 0 252px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .055;
+  background: url('/crimeguard-assets/crime-scene-lab.png') center / cover no-repeat;
+  filter: grayscale(.35) contrast(1.1);
+}
+/* Sharper text contrast and more compact, field-friendly controls. */
+.hero p, .loginPitch p, .loginSub, .loginFoot, .sectionTitle span,
+.field label, .crumb, .mapLegend, .stat .meta, .tip { color: #b0bec5; }
+.card, .modelCard { backdrop-filter: blur(5px); }
+.field input, .field select, .inputIcon input { font-size: 13px; }
+.navbtn, .actionCard, .tab, .secondary, .primary { transition: background-color .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
+@media (max-width: 1100px) {
+  .main:before { left: 0; opacity: .035; }
+  .heroDashboard { background-position: center, 60% center; }
+}
+@media (max-width: 700px) {
+  .loginHero { background-size: cover, auto 72%; background-position: center, center 35%; }
+  .heroDashboard { background-position: center, 58% center; }
+  .heroDashboard:after { display: none; }
+}

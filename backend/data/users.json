@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "police",
+      "name": "Police Officer",
+      "role": "police",
+      "salt": "0abb12b2c58157cbd443cd878e51d902",
+      "hash": "eaf14bcdbbf74ebd22297d7ae185a2bc9601c65a70814c7f08d3d70ab1354445",
+      "iterations": 200000
+    },
+    {
+      "username": "crimebranch",
+      "name": "Crime Branch Analyst",
+      "role": "crime_branch",
+      "salt": "5a684e6f1a619b5bc0162259e89fac3e",
+      "hash": "30af2bfa0ebf6091aa0b6d7860bd48de87b76b45271332d6eb49023aa98bd2aa",
+      "iterations": 200000
+    }
+  ]
+}

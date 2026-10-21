@@ -1,0 +1,19 @@
+.git
+.github
+.venv
+venv
+env
+__pycache__
+*.py[cod]
+*.log
+.DS_Store
+
+# Frontend build cache
+frontend/node_modules
+frontend/dist
+
+# Raw datasets & notebook not needed for live prediction & analytics
+backend/data/Crimes_2025.csv
+backend/data/.auth_secret
+original_artifacts
+DWM_ML_Final.ipynb

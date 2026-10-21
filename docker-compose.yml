@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  crimeguard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crimeguard-app
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - CRIMEGUARD_SECRET=demo_deployment_secret_change_me
+    restart: unless-stopped

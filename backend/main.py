@@ -1,20 +1,30 @@
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from pathlib import Path
-import json, pickle, sqlite3, math
+import json, pickle, sqlite3, math, sys
 import joblib
 import numpy as np
 import pandas as pd
 from catboost import CatBoostClassifier, Pool
-import auth
-import olap_questions
 
 BASE = Path(__file__).resolve().parent
+if str(BASE) not in sys.path:
+    sys.path.insert(0, str(BASE))
+
+import auth
+import olap_questions
 MODEL_DIR = BASE / "models"
 DATA_DIR = BASE / "data"
+
+FRONTEND_DIST = None
+for candidate in [BASE / "static", BASE.parent / "frontend" / "dist"]:
+    if candidate.exists() and (candidate / "index.html").exists():
+        FRONTEND_DIST = candidate
+        break
 
 with open(MODEL_DIR / "crimeguard_model_metadata.json", encoding="utf-8") as f:
     METADATA = json.load(f)
@@ -155,15 +165,17 @@ def model_catalog():
         })
     return result
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
-    return {"message": "CrimeGuard API is running", "docs": "/docs", "health": "/api/health", "version": "1.1.0"}
+    if FRONTEND_DIST and (FRONTEND_DIST / "index.html").exists():
+        return FileResponse(str(FRONTEND_DIST / "index.html"))
+    return {"message": "CrimeGuard API is running", "docs": "/docs", "health": "/api/health", "version": "1.2.0"}
 
-@app.get("/api")
+@app.api_route("/api", methods=["GET", "HEAD"])
 def api_root():
     return {"message": "CrimeGuard API is running", "health": "/api/health", "docs": "/docs"}
 
-@app.get("/api/health")
+@app.api_route("/api/health", methods=["GET", "HEAD"])
 def health():
     return {"status": "online", "model": METADATA["model_name"], "threshold": METADATA["decision_threshold"], "features": METADATA["total_features"], "warehouse": DB_PATH.exists(), "models": len(model_catalog()), "auth": True}
 
@@ -343,3 +355,25 @@ def mining_apriori():
     rules = pd.read_csv(DATA_DIR / "CrimeGuard_Apriori_Rules.csv")
     items = pd.read_csv(DATA_DIR / "CrimeGuard_Frequent_Itemsets.csv").sort_values("support", ascending=False)
     return {"rules": rules.round(4).to_dict("records"), "itemsets": items.head(20).round(4).to_dict("records")}
+
+
+# ---------------------------------------------------------------- static / SPA serving
+if FRONTEND_DIST:
+    assets_dir = FRONTEND_DIST / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
+
+    @app.get("/{full_path:path}")
+    async def serve_spa(full_path: str):
+        if full_path.startswith("api") or full_path in ("docs", "redoc", "openapi.json"):
+            raise HTTPException(status_code=404, detail="Not found")
+        target = FRONTEND_DIST / full_path
+        if target.is_file():
+            return FileResponse(str(target))
+        return FileResponse(str(FRONTEND_DIST / "index.html"))
+
+
+if __name__ == "__main__":
+    import uvicorn, os
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)

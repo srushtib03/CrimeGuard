@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: crimeguard
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: CRIMEGUARD_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
